@@ -1,7 +1,7 @@
 body,
 html {
   height: 100%;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 .sidebar {
   display: none; }
@@ -21,23 +21,23 @@ ul {
   ul li {
     display: inline; }
     ul li a {
-      color: #FFF;
+      color: #fff;
       padding: 15px;
       text-decoration: none; }
 
 /* comments start */
 section#hero {
-  background-color: #7CDCAC;
+  background-color: #7cdcac;
   padding: 2em;
-  border-top: 5px solid #7CDCAC;
+  border-top: 5px solid #7cdcac;
   grid-area: hero;
   display: grid;
   grid-template-columns: repeat(2, auto); }
   section#hero #content h1 {
     text-transform: uppercase;
-    color: #FFF; }
+    color: #fff; }
   section#hero #content p {
-    color: #FFF; }
+    color: #fff; }
   section#hero img {
     max-width: 100%;
     background-size: cover;
@@ -51,14 +51,14 @@ section#hero {
 
 /* comments end */
 section#banner {
-  background-color: #7CDCAC;
+  background-color: #7cdcac;
   padding: 2em;
-  border-top: 5px solid #7CDCAC;
+  border-top: 5px solid #7cdcac;
   grid-area: banner;
   display: grid; }
   section#banner #text {
     text-transform: uppercase;
-    color: #FFF;
+    color: #fff;
     text-align: center;
     margin-bottom: 10px; }
     section#banner #text h1 {
@@ -96,11 +96,11 @@ section#banner {
     width: 20%;
     min-height: 24px;
     border-radius: 50px;
-    background-color: #FFCF6D;
+    background-color: #ffcf6d;
     text-decoration: none;
     text-align: center;
     padding: 10px;
-    color: #FFF;
+    color: #fff;
     font-weight: 700;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     animation: moveInBottom 0.5s ease-out 0.75s backwards; }
@@ -125,19 +125,23 @@ section#banner {
 /* sidebar start */
 .sidebar {
   grid-area: sidebar;
-  background-color: #7CDCAC;
-  color: #FFF;
+  background-color: #7cdcac;
+  color: #fff;
   padding: 1em; }
 
 .main {
   grid-area: right;
-  grid-template-rows: 51px 30% 20% auto fit-content(15%);
+  grid-template-rows: 51px 30% 20% auto fit-content(15%) 20%;
   display: grid;
   /* for @media */
-  grid-template-areas: "head" "banner" "invention" "features" "hero"; }
+  grid-template-areas: "head" "banner" "invention" "features" "hero" "signup";
+  /* center body center start */
+  /* grid-template-columns: 800px;
+    justify-content: center; */
+  /* center body center end */ }
 
 header {
-  background-color: #7CDCAC;
+  background-color: #7cdcac;
   grid-area: head;
   display: grid;
   grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end]; }
@@ -145,7 +149,7 @@ header {
     max-width: 15%;
     background-size: cover;
     padding: 15px;
-    background-color: #7CDCAC;
+    background-color: #7cdcac;
     display: inline-block; }
 
 footer {
@@ -180,8 +184,13 @@ ul#features {
     padding: 1em;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     /* align-self: start; */ }
+    ul#features li:hover {
+      transform: scale(1.2);
+      background-color: rgba(124, 220, 172, 0.7);
+      transition-timing-function: ease-in;
+      transition: 1s; }
     ul#features li p {
-      color: #4C4C4C; }
+      color: #4c4c4c; }
 
 /* infos start */
 section#info {
@@ -196,6 +205,67 @@ section#info {
     align-self: center; }
 
 /* infos end */
+.section-book {
+  display: grid;
+  grid-area: signup;
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7cdcac, #00C99D); }
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/signup.jpeg);
+  background-size: cover;
+  width: 70%;
+  height: 30rem;
+  border-radius: 3px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; }
+  .book-form {
+    width: 50%;
+    padding: 6rem; }
+    .book-form p {
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: #7cdcac;
+      font-weight: bolder; }
+
+.form-group:not(:last-child) {
+  margin-bottom: 1rem; }
+
+.form-input {
+  font-size: 1em;
+  padding: 0.8rem 1.3rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(76, 76, 76, 0.1);
+  width: 60%;
+  display: block; }
+  .form-input:focus {
+    outline: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #7cdcac; }
+
+.btn, .btn:link, .btn:visited {
+  background-color: #7cdcac;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  border: none;
+  cursor: pointer; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
 /* responsive start */
 @media screen and (max-width: 60em) {
   .sidebar {
@@ -206,7 +276,7 @@ section#info {
     grid-template-areas: "right" "footer";
     /* sidebar end */ }
   .main {
-    grid-template-areas: "head" "banner" "invention" "features" "hero"; }
+    grid-template-areas: "head" "banner" "invention" "features" "hero" "signup"; }
   #features {
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(3, auto); }
@@ -215,7 +285,7 @@ section#info {
 
 @media screen and (max-width: 40em) {
   .main {
-    grid-template-rows: auto 30% 20% auto fit-content(15%); }
+    grid-template-rows: auto 30% 20% auto fit-content(15%) 10%; }
   header {
     grid-template-columns: auto;
     grid-template-rows: repeat(2, auto); }
@@ -229,13 +299,13 @@ section#info {
   nav ul li a {
     width: calc(25% - 35px);
     display: inline-block;
-    font-size: .9em; }
+    font-size: 0.9em; }
   section#hero,
   section#info {
     grid-template-columns: auto;
     text-align: center; }
   .main {
-    grid-template-areas: "head" "banner" "invention" "features" "hero"; }
+    grid-template-areas: "head" "banner" "invention" "features" "hero" "signup"; }
   h1,
   h2 {
     font-size: 1.2em; }
@@ -245,12 +315,25 @@ section#info {
     height: 100px; }
   #content p,
   #content2 p {
-    font-size: .9em; }
+    font-size: 0.9em; }
   #features {
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(4, auto); }
   ul#features li:nth-child(1),
   ul#features li:nth-child(2) {
-    grid-column: 1 / span 2; } }
+    grid-column: 1 / span 2; }
+  .book {
+    background-image: url(../img/signup.jpeg); }
+    .book-form p {
+      font-size: 1.5rem;
+      font-weight: bold; }
+  .btn, .btn:link, .btn:visited {
+    padding: 0.5rem 3rem; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; } }
 
 /* responsive end */

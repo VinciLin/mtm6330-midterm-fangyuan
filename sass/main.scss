@@ -1,29 +1,26 @@
-$color-primary: #7CDCAC;
-$color-secondary: #FFCF6D;
+$color-primary: #7cdcac;
+$color-primary-dark:#00C99D;
+$color-secondary: #ffcf6d;
 
-$color-white: #FFF;
-$color-light-dark: #4C4C4C;
-$color-dark:#454545;
+$color-white: #fff;
+$color-light-dark: #4c4c4c;
+$color-dark: #454545;
 
 $colorShadow: rgba(black, 0.1);
 $shadowInset: 0px 5px 10px $colorShadow;
 
-
-
-
 //   .box-shadow {
 //     width: 100px;
-//     height: 100px; 
+//     height: 100px;
 //     background: #333;
 //     margin: 50px;
 //     @include box-shadow(5px, 5px, 5px, #333)
 //   }
 
-
 body,
 html {
     height: 100%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 .sidebar {
@@ -46,8 +43,6 @@ body {
     grid-template-areas:
         "right"
         "footer";
-
-
 }
 
 ul {
@@ -66,7 +61,6 @@ ul {
 }
 
 /* comments start */
-
 
 section#hero {
     background-color: $color-primary;
@@ -101,7 +95,6 @@ section#hero {
 
 /* comments end */
 
-
 // banner start
 section#banner {
     background-color: $color-primary;
@@ -110,7 +103,6 @@ section#banner {
     grid-area: banner;
     display: grid;
     // grid-template-columns: repeat(2, auto);
-
 
     #text {
         text-transform: uppercase;
@@ -195,7 +187,6 @@ section#banner {
             transform: translateY(-1px);
         }
 
-
         @keyframes moveInBottom {
             0% {
                 opacity: 0;
@@ -208,8 +199,6 @@ section#banner {
             }
         }
     }
-
-
 }
 
 // banner end
@@ -225,7 +214,7 @@ section#banner {
 .main {
     grid-area: right;
     // grid-template-rows: 51px fit-content(30%) 40% auto;
-    grid-template-rows: 51px 30% 20% auto fit-content(15%);
+    grid-template-rows: 51px 30% 20% auto fit-content(15%) 20%;
     display: grid;
     /* for @media */
     grid-template-areas:
@@ -234,16 +223,13 @@ section#banner {
         "invention"
         "features"
         "hero"
+        "signup";
 
-
-
-        /* center body center start */
-        /* grid-template-columns: 800px;
+    /* center body center start */
+    /* grid-template-columns: 800px;
     justify-content: center; */
-        /* center body center end */
+    /* center body center end */
 }
-
-
 
 header {
     background-color: $color-primary;
@@ -260,7 +246,6 @@ header {
         display: inline-block;
     }
 }
-
 
 footer {
     grid-area: footer;
@@ -284,7 +269,6 @@ footer p {
     text-align: center;
     grid-area: features;
     grid-gap: 5px;
-
 }
 
 #features i {
@@ -295,16 +279,21 @@ ul#features {
     margin: 0;
     padding: 0;
 
-
     li {
         background-color: #fff;
         padding: 1em;
         box-shadow: $shadowInset;
 
+        &:hover {
+            transform: scale(1.2);
+            background-color: rgba($color-primary, 0.7);
+            transition-timing-function: ease-in;
+            transition: 1s;
+        }
 
         /* align-self: start; */
         p {
-            color: #4C4C4C;
+            color: #4c4c4c;
         }
     }
 
@@ -331,8 +320,6 @@ ul#features {
     // }
 }
 
-
-
 /* infos start */
 section#info {
     background-color: #f2f2f2;
@@ -348,12 +335,101 @@ section#info {
     }
 }
 
-
-
 /* infos end */
 
+
+// book start
+.section-book {
+    display: grid;
+    grid-area: signup;
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark);
+}
+
+.book {
+    background-image: linear-gradient(105deg, rgba($color-white, .9)0%, rgba($color-white, .9)50%, transparent 50%), url(../img/signup.jpeg);
+    background-size: cover;
+    width: 70%;
+    height: 30rem;
+    border-radius: 3px;
+    box-shadow: $shadowInset;
+    margin: 0 auto;
+
+    &-form {
+        width: 50%;
+        padding: 6rem;
+
+        p {
+            text-transform: uppercase;
+            font-size: 2rem;
+            color: $color-primary;
+            font-weight: bolder;
+        }
+    }
+
+}
+
+.form {
+    &-group:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &-input {
+        font-size: 1em;
+        padding: 0.8rem 1.3rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: 1px solid rgba($color-light-dark, .1);
+
+        width: 60%;
+        display: block;
+
+        &:focus {
+            outline: none;
+            box-shadow: $shadowInset;
+            border-bottom: 3px solid $color-primary;
+        }
+    }
+
+}
+
+
+
+.btn {
+
+    &,
+    &:link,
+    &:visited {
+        background-color: $color-primary;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        color: $color-white;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        border: none;
+        cursor: pointer;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: $shadowInset;
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+}
+
+// book end
+
 /* responsive start */
-@media screen and (max-width:60em) {
+@media screen and (max-width: 60em) {
     .sidebar {
         display: none;
     }
@@ -365,7 +441,6 @@ section#info {
             "right"
             "footer";
         /* sidebar end */
-
     }
 
     .main {
@@ -375,8 +450,7 @@ section#info {
             "invention"
             "features"
             "hero"
-
-
+            "signup";
     }
 
     #features {
@@ -389,10 +463,9 @@ section#info {
     }
 }
 
-
 @media screen and (max-width: 40em) {
     .main {
-        grid-template-rows: auto 30% 20% auto fit-content(15%);
+        grid-template-rows: auto 30% 20% auto fit-content(15%) 10%;
     }
 
     header {
@@ -402,7 +475,6 @@ section#info {
 
     #logo {
         margin: 0 auto;
-
     }
 
     nav ul {
@@ -415,7 +487,7 @@ section#info {
     nav ul li a {
         width: calc(25% - 35px);
         display: inline-block;
-        font-size: .9em;
+        font-size: 0.9em;
     }
 
     section#hero,
@@ -431,7 +503,7 @@ section#info {
             "invention"
             "features"
             "hero"
-
+            "signup";
     }
 
     h1,
@@ -447,7 +519,7 @@ section#info {
 
     #content p,
     #content2 p {
-        font-size: .9em;
+        font-size: 0.9em;
     }
 
     #features {
@@ -460,6 +532,41 @@ section#info {
         grid-column: 1 / span 2;
     }
 
+    .book {
+        background-image: url(../img/signup.jpeg);
+
+        &-form {
+
+            p {
+
+                font-size: 1.5rem;
+                font-weight: bold;
+
+            }
+        }
+
+    }
+
+    .btn {
+
+        &,
+        &:link,
+        &:visited {
+
+            padding: 0.5rem 3rem;
+
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: $shadowInset;
+
+            &::after {
+                transform: scaleX(1.4) scaleY(1.6);
+                opacity: 0;
+            }
+        }
+    }
 
 }
 
