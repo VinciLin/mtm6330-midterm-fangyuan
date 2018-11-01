@@ -1,5 +1,24 @@
+// delete body{display:grid}
+// grid-template-rows: auto 50px;
+// grid-template-columns: auto;
+// grid-templatex-areas:
+//   "right"
+//   "footer";
+
+// add .main {grid-template-rows: 51px 20% 20% auto fit-content(15%) 20%;} 20%,and area "footer"
+
+// delete .main {grid-template-rows: 51px 20% 20% auto fit-content(15%) 20%;}, the footer will go down.
+
+//  comments from Anton:for the features hover effect, if you want it to be smooth both on when you hover on and out, you need to set “transition” not on hover, but just on the li element. 
+
+// Also,
+// try changing your scale to scale(1.05),
+// and transition to 0.3s ease-out,
+// and also adding small shadow like so: box-shadow: 0px 0px 30px rgba(11, 11, 11, 0.2) and also adding cursor:pointer so that cursor changes on hover. 
+
+
 $color-primary: #7cdcac;
-$color-primary-dark:#00C99D;
+$color-primary-dark: #00c99d;
 $color-secondary: #ffcf6d;
 
 $color-white: #fff;
@@ -19,555 +38,555 @@ $shadowInset: 0px 5px 10px $colorShadow;
 
 body,
 html {
-    height: 100%;
-    font-family: "Open Sans", sans-serif;
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
 }
 
 .sidebar {
-    display: none;
+  display: none;
 }
 
 body {
-    margin: 0;
-    display: grid;
-    /* sidebar start*/
-    // grid-template-rows: auto 50px;
-    // grid-template-columns: 12% auto;
-    // grid-template-areas:
-    //     "sidebar right"
-    //     "footer footer";
-    /* sidebar end */
+  margin: 0;
+  // display: grid;
+  /* sidebar start*/
+  // grid-template-rows: auto 50px;
+  // grid-template-columns: 12% auto;
+  // grid-template-areas:
+  //     "sidebar right"
+  //     "footer footer";
+  /* sidebar end */
 
-    grid-template-rows: auto 50px;
-    grid-template-columns: auto;
-    grid-template-areas:
-        "right"
-        "footer";
+  // grid-template-rows: auto 50px;
+  // grid-template-columns: auto;
+  // grid-template-areas:
+  //   "right"
+  //   "footer";
 }
 
 ul {
-    list-style-type: none;
-    float: right;
+  list-style-type: none;
+  float: right;
 
-    li {
-        display: inline;
+  li {
+    display: inline;
 
-        a {
-            color: $color-white;
-            padding: 15px;
-            text-decoration: none;
-        }
+    a {
+      color: $color-white;
+      padding: 15px;
+      text-decoration: none;
     }
+  }
 }
 
 /* comments start */
 
 section#hero {
-    background-color: $color-primary;
-    padding: 2em;
-    border-top: 5px solid $color-primary;
-    grid-area: hero;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
+  background-color: $color-primary;
+  padding: 2em;
+  border-top: 5px solid $color-primary;
+  grid-area: hero;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
 
-    #content h1 {
-        text-transform: uppercase;
-        color: $color-white;
-    }
+  #content h1 {
+    text-transform: uppercase;
+    color: $color-white;
+  }
 
-    #content p {
-        color: $color-white;
-    }
+  #content p {
+    color: $color-white;
+  }
 
-    img {
-        max-width: 100%;
-        background-size: cover;
-        margin: 0 auto;
-    }
+  img {
+    max-width: 100%;
+    background-size: cover;
+    margin: 0 auto;
+  }
 }
 
 #portrait1,
 #mountain1 {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
 
 /* comments end */
 
 // banner start
 section#banner {
-    background-color: $color-primary;
-    padding: 2em;
-    border-top: 5px solid $color-primary;
-    grid-area: banner;
-    display: grid;
-    // grid-template-columns: repeat(2, auto);
+  background-color: $color-primary;
+  padding: 2em;
+  border-top: 5px solid $color-primary;
+  grid-area: banner;
+  display: grid;
+  // grid-template-columns: repeat(2, auto);
 
-    #text {
-        text-transform: uppercase;
-        color: $color-white;
-        text-align: center;
-        margin-bottom: 10px;
+  #text {
+    text-transform: uppercase;
+    color: $color-white;
+    text-align: center;
+    margin-bottom: 10px;
 
-        h1 {
-            font-size: 2.5em;
-            font-weight: bolder;
-            letter-spacing: 7px;
-            animation: moveInLeft 1s ease-out;
-        }
-
-        p {
-            font-size: 1em;
-            font-weight: 700;
-            letter-spacing: 5px;
-            animation: moveInRight 1s ease-out;
-        }
-
-        @keyframes moveInLeft {
-            0% {
-                opacity: 0;
-                transform: translateX(-100px);
-            }
-
-            80% {
-                transform: translateX(10px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translate(0);
-            }
-        }
-
-        @keyframes moveInRight {
-            0% {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-
-            80% {
-                transform: translateX(-10px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translate(0);
-            }
-        }
+    h1 {
+      font-size: 2.5em;
+      font-weight: bolder;
+      letter-spacing: 7px;
+      animation: moveInLeft 1s ease-out;
     }
 
-    a.btn {
-        margin: 0 auto;
-        width: 20%;
-        min-height: 24px;
-        border-radius: 50px;
-        background-color: $color-secondary;
-        text-decoration: none;
-        text-align: center;
-        padding: 10px;
-        color: $color-white;
-        font-weight: 700;
-        box-shadow: $shadowInset;
-        animation: moveInBottom 0.5s ease-out 0.75s backwards;
-
-        &:link,
-        &:visited {
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 10px 45px;
-        }
-
-        &:hover {
-            transform: translateY(-3px);
-            box-shadow: $shadowInset;
-        }
-
-        &:active {
-            transform: translateY(-1px);
-        }
-
-        @keyframes moveInBottom {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translate(0);
-            }
-        }
+    p {
+      font-size: 1em;
+      font-weight: 700;
+      letter-spacing: 5px;
+      animation: moveInRight 1s ease-out;
     }
+
+    @keyframes moveInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+
+      80% {
+        transform: translateX(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+
+    @keyframes moveInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+
+      80% {
+        transform: translateX(-10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+  }
+
+  a.btn {
+    margin: 0 auto;
+    width: 20%;
+    min-height: 24px;
+    border-radius: 50px;
+    background-color: $color-secondary;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    color: $color-white;
+    font-weight: 700;
+    box-shadow: $shadowInset;
+    animation: moveInBottom 0.5s ease-out 0.75s backwards;
+
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 45px;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $shadowInset;
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+
+    @keyframes moveInBottom {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+  }
 }
 
 // banner end
 
 /* sidebar start */
 .sidebar {
-    grid-area: sidebar;
-    background-color: $color-primary;
-    color: $color-white;
-    padding: 1em;
+  grid-area: sidebar;
+  background-color: $color-primary;
+  color: $color-white;
+  padding: 1em;
 }
 
 .main {
-    grid-area: right;
-    // grid-template-rows: 51px fit-content(30%) 40% auto;
-    grid-template-rows: 51px 30% 20% auto fit-content(15%) 20%;
-    display: grid;
-    /* for @media */
-    grid-template-areas:
-        "head"
-        "banner"
-        "invention"
-        "features"
-        "hero"
-        "signup";
+  grid-area: right;
+  // grid-template-rows: 51px fit-content(30%) 40% auto;
+  // grid-template-rows: 51px 20% 20% auto fit-content(15%) 20%;
+  display: grid;
+  /* for @media */
+  grid-template-areas:
+    "head"
+    "banner"
+    "invention"
+    "features"
+    "hero"
+    "signup"
+    "footer";
 
-    /* center body center start */
-    /* grid-template-columns: 800px;
+  /* center body center start */
+  /* grid-template-columns: 800px;
     justify-content: center; */
-    /* center body center end */
+  /* center body center end */
 }
 
 header {
-    background-color: $color-primary;
-    grid-area: head;
-    display: grid;
-    grid-template-columns: [logo-start]fit-content(20%) [nav-start] auto [nav-end];
+  background-color: $color-primary;
+  grid-area: head;
+  display: grid;
+  grid-template-columns: [logo-start]fit-content(20%) [nav-start] auto [nav-end];
 
-    #logo {
-        max-width: 15%;
-        background-size: cover;
-        padding: 15px;
-        // margin-left: 15px;
-        background-color: $color-primary;
-        display: inline-block;
-    }
+  #logo {
+    max-width: 15%;
+    background-size: cover;
+    padding: 15px;
+    // margin-left: 15px;
+    background-color: $color-primary;
+    display: inline-block;
+  }
 }
 
 footer {
-    grid-area: footer;
-    background-color: $color-dark;
-    text-align: center;
+  grid-area: footer;
+  background-color: $color-dark;
+  text-align: center;
 }
 
 footer p {
-    color: #fff;
-    text-align: center;
+  color: #fff;
+  text-align: center;
 }
 
 /* features start */
 #features {
-    display: grid;
-    /* grid-template-columns: repeat(2, auto);
+  display: grid;
+  /* grid-template-columns: repeat(2, auto);
     grid-template-columns: repeat(2, auto);
     grid-column-gap: 10px;
     grid-row-gap: 10px; */
-    grid-template-columns: repeat(5, auto);
-    text-align: center;
-    grid-area: features;
-    grid-gap: 5px;
+  grid-template-columns: repeat(5, auto);
+  text-align: center;
+  grid-area: features;
+  grid-gap: 5px;
 }
 
 #features i {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 ul#features {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    li {
-        background-color: #fff;
-        padding: 1em;
-        box-shadow: $shadowInset;
+  li {
+    background-color: #fff;
+    padding: 1em;
+    box-shadow: $shadowInset;
+    transition-timing-function: ease-out;
+    transition: 0.3s;
 
-        &:hover {
-            transform: scale(1.2);
-            background-color: rgba($color-primary, 0.7);
-            transition-timing-function: ease-in;
-            transition: 1s;
-        }
 
-        /* align-self: start; */
-        p {
-            color: #4c4c4c;
-        }
+    &:hover {
+      transform: scale(1.05);
+      background-color: rgba($color-primary, 0.7);
+      box-shadow: 0px 0px 30px rgba(11, 11, 11, 0.2);
+      cursor: pointer;
+
+
     }
 
-    // &:nth-child(1) {
-    //     background-color: #e6e6e6;
-    // }
+    /* align-self: start; */
+    p {
+      color: #4c4c4c;
+    }
+  }
 
-    // &:nth-child(2) {
-    //     background-color: #d3d3d3;
-    //     /* align-self: center; */
-    // }
+  // &:nth-child(1) {
+  //     background-color: #e6e6e6;
+  // }
 
-    // &:nth-child(3) {
-    //     background-color: #cacaca;
-    // }
+  // &:nth-child(2) {
+  //     background-color: #d3d3d3;
+  //     /* align-self: center; */
+  // }
 
-    // &:nth-child(4) {
-    //     background-color: #e6e6e6;
-    //     /* align-self: center; */
-    // }
+  // &:nth-child(3) {
+  //     background-color: #cacaca;
+  // }
 
-    // &:nth-child(5) {
-    //     background-color: #d3d3d3;
-    // }
+  // &:nth-child(4) {
+  //     background-color: #e6e6e6;
+  //     /* align-self: center; */
+  // }
+
+  // &:nth-child(5) {
+  //     background-color: #d3d3d3;
+  // }
 }
 
 /* infos start */
 section#info {
-    background-color: #f2f2f2;
-    padding: 2em;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    align-items: space-around;
-    grid-area: invention;
+  background-color: #f2f2f2;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: space-around;
+  grid-area: invention;
 
-    #mountain-vector {
-        width: 200px;
-        align-self: center;
-    }
+  #mountain-vector {
+    width: 200px;
+    align-self: center;
+  }
 }
 
 /* infos end */
 
-
 // book start
 .section-book {
-    display: grid;
-    grid-area: signup;
-    padding: 15rem 0;
-    background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark);
+  display: grid;
+  grid-area: signup;
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom,
+    $color-primary,
+    $color-primary-dark);
 }
 
 .book {
-    background-image: linear-gradient(105deg, rgba($color-white, .9)0%, rgba($color-white, .9)50%, transparent 50%), url(../img/signup.jpeg);
-    background-size: cover;
-    width: 70%;
-    height: 30rem;
-    border-radius: 3px;
-    box-shadow: $shadowInset;
-    margin: 0 auto;
+  background-image: linear-gradient(105deg,
+    rgba($color-white, 0.9) 0%,
+    rgba($color-white, 0.9) 50%,
+    transparent 50%),
+    url(../img/signup.jpeg);
+  background-size: cover;
+  width: 70%;
+  height: 30rem;
+  border-radius: 3px;
+  box-shadow: $shadowInset;
+  margin: 0 auto;
 
-    &-form {
-        width: 50%;
-        padding: 6rem;
+  &-form {
+    width: 50%;
+    padding: 6rem;
 
-        p {
-            text-transform: uppercase;
-            font-size: 2rem;
-            color: $color-primary;
-            font-weight: bolder;
-        }
+    p {
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: $color-primary;
+      font-weight: bolder;
     }
-
+  }
 }
 
 .form {
-    &-group:not(:last-child) {
-        margin-bottom: 1rem;
+  &-group:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  &-input {
+    font-size: 1em;
+    padding: 0.8rem 1.3rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: 1px solid rgba($color-light-dark, 0.1);
+
+    width: 60%;
+    display: block;
+
+    &:focus {
+      outline: none;
+      box-shadow: $shadowInset;
+      border-bottom: 3px solid $color-primary;
     }
-
-    &-input {
-        font-size: 1em;
-        padding: 0.8rem 1.3rem;
-        border-radius: 2px;
-        background-color: rgba($color-white, .5);
-        border: 1px solid rgba($color-light-dark, .1);
-
-        width: 60%;
-        display: block;
-
-        &:focus {
-            outline: none;
-            box-shadow: $shadowInset;
-            border-bottom: 3px solid $color-primary;
-        }
-    }
-
+  }
 }
-
-
 
 .btn {
 
-    &,
-    &:link,
-    &:visited {
-        background-color: $color-primary;
-        font-size: 1.2rem;
-        font-weight: bolder;
-        color: $color-white;
-        text-transform: uppercase;
-        text-decoration: none;
-        padding: 1rem 4rem;
-        display: inline-block;
-        border-radius: 10rem;
-        transition: all .2s;
-        position: relative;
-        border: none;
-        cursor: pointer;
-    }
+  &,
+  &:link,
+  &:visited {
+    background-color: $color-primary;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: $color-white;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    border: none;
+    cursor: pointer;
+  }
 
-    &:hover {
-        transform: translateY(-3px);
-        box-shadow: $shadowInset;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadowInset;
 
-        &::after {
-            transform: scaleX(1.4) scaleY(1.6);
-            opacity: 0;
-        }
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
     }
+  }
 }
 
 // book end
 
 /* responsive start */
 @media screen and (max-width: 60em) {
-    .sidebar {
-        display: none;
-    }
+  .sidebar {
+    display: none;
+  }
 
-    /* wide enough taht will no sidebar */
-    body {
-        grid-template-columns: auto;
-        grid-template-areas:
-            "right"
-            "footer";
-        /* sidebar end */
-    }
+  /* wide enough taht will no sidebar */
+  body {
+    grid-template-columns: auto;
+    grid-template-areas:
+      "right"
+      "footer";
+    /* sidebar end */
+  }
 
-    .main {
-        grid-template-areas:
-            "head"
-            "banner"
-            "invention"
-            "features"
-            "hero"
-            "signup";
-    }
+  .main {
+    grid-template-areas:
+      "head"
+      "banner"
+      "invention"
+      "features"
+      "hero"
+      "signup";
+  }
 
-    #features {
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(3, auto);
-    }
+  #features {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+  }
 
-    ul#features li:nth-child(5) {
-        grid-column: 1 / span 2;
-    }
+  ul#features li:nth-child(5) {
+    grid-column: 1 / span 2;
+  }
 }
 
 @media screen and (max-width: 40em) {
-    .main {
-        grid-template-rows: auto 30% 20% auto fit-content(15%) 10%;
+  .main {
+    grid-template-rows: auto 30% 20% auto fit-content(15%) 10%;
+  }
+
+  header {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, auto);
+  }
+
+  #logo {
+    margin: 0 auto;
+  }
+
+  nav ul {
+    float: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  nav ul li a {
+    width: calc(25% - 35px);
+    display: inline-block;
+    font-size: 0.9em;
+  }
+
+  section#hero,
+  section#info {
+    grid-template-columns: auto;
+    text-align: center;
+  }
+
+  .main {
+    grid-template-areas:
+      "head"
+      "banner"
+      "invention"
+      "features"
+      "hero"
+      "signup";
+  }
+
+  h1,
+  h2 {
+    font-size: 1.2em;
+  }
+
+  #portrait1,
+  #mountain1 {
+    width: 100px;
+    height: 100px;
+  }
+
+  #content p,
+  #content2 p {
+    font-size: 0.9em;
+  }
+
+  #features {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4, auto);
+  }
+
+  ul#features li:nth-child(1),
+  ul#features li:nth-child(2) {
+    grid-column: 1 / span 2;
+  }
+
+  .book {
+    background-image: url(../img/signup.jpeg);
+
+    &-form {
+      p {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .btn {
+
+    &,
+    &:link,
+    &:visited {
+      padding: 0.5rem 3rem;
     }
 
-    header {
-        grid-template-columns: auto;
-        grid-template-rows: repeat(2, auto);
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $shadowInset;
+
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
     }
-
-    #logo {
-        margin: 0 auto;
-    }
-
-    nav ul {
-        float: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-
-    nav ul li a {
-        width: calc(25% - 35px);
-        display: inline-block;
-        font-size: 0.9em;
-    }
-
-    section#hero,
-    section#info {
-        grid-template-columns: auto;
-        text-align: center;
-    }
-
-    .main {
-        grid-template-areas:
-            "head"
-            "banner"
-            "invention"
-            "features"
-            "hero"
-            "signup";
-    }
-
-    h1,
-    h2 {
-        font-size: 1.2em;
-    }
-
-    #portrait1,
-    #mountain1 {
-        width: 100px;
-        height: 100px;
-    }
-
-    #content p,
-    #content2 p {
-        font-size: 0.9em;
-    }
-
-    #features {
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(4, auto);
-    }
-
-    ul#features li:nth-child(1),
-    ul#features li:nth-child(2) {
-        grid-column: 1 / span 2;
-    }
-
-    .book {
-        background-image: url(../img/signup.jpeg);
-
-        &-form {
-
-            p {
-
-                font-size: 1.5rem;
-                font-weight: bold;
-
-            }
-        }
-
-    }
-
-    .btn {
-
-        &,
-        &:link,
-        &:visited {
-
-            padding: 0.5rem 3rem;
-
-        }
-
-        &:hover {
-            transform: translateY(-3px);
-            box-shadow: $shadowInset;
-
-            &::after {
-                transform: scaleX(1.4) scaleY(1.6);
-                opacity: 0;
-            }
-        }
-    }
-
+  }
 }
 
 /* responsive end */
